@@ -65,3 +65,27 @@ elif secondoption.lower() == "attack" and character == "stealth":
     health -= 40
 else:
     raise WrongAnswer("attack/move")
+
+print(f"{character1.name} the map you found leads you back to reality!")
+print("You must reach the temple of Doom and from there you can escape!")
+print("Only you must choose which path to take, through the caves east or the western trail!")
+thirdoption = input("caves/trail")
+if thirdoption.lower() == "caves" and character == "strength":
+    print("You lumber into the caves but you cannot see anything!")
+    print("A swarm of bats attacks you and bites you!")
+    print("Your take damage but you exit and you can see the temple in the distance.")
+    health -= 20
+elif thirdoption.lower() == "trail" and character == "strength":
+    print("You take the trail and two jaguars jump in front of you!")
+    print("Only this time you are prepared and pound them both while they leap!")
+    print("You move on unscathed and spot the temple ...")
+elif thirdoption.lower() == "caves" and character == "stealth":
+    print("Like a thief in the night, you sneak through the caves and even bypass some enemies.")
+    print("You finally exit the cave and spot your ticket out.")
+elif thirdoption.lower() == "trail" and character == "stealth":
+    print("You take the trail but suddenly two monkeys throw spears at you.")
+    print("One of them hits your abdomen but you manage to escape.")
+    print("You are hurt but finally you see the temple in the distance.")
+    health -= 20
+else:
+    raise WrongAnswer("caves/trail")
