@@ -23,6 +23,7 @@ class JumanjiChar:
 nombre = input("What will be your name brave sir? ")
 character1 = JumanjiChar(nombre, character)
 health = 100
+
 print(f"{character1.name} you are in the lush Amazon Rainforest.")
 print(f"Be aware your health is currently at {health} but that could change soon.")
 firstoption = input("Do you cross the murky river or forge a path through the jungle? river/jungle ")
@@ -69,7 +70,7 @@ else:
 print(f"{character1.name} the map you found leads you back to reality!")
 print("You must reach the temple of Doom and from there you can escape!")
 print("Only you must choose which path to take, through the caves east or the western trail!")
-thirdoption = input("caves/trail")
+thirdoption = input("caves/trail ")
 if thirdoption.lower() == "caves" and character == "strength":
     print("You lumber into the caves but you cannot see anything!")
     print("A swarm of bats attacks you and bites you!")
@@ -89,3 +90,39 @@ elif thirdoption.lower() == "trail" and character == "stealth":
     health -= 20
 else:
     raise WrongAnswer("caves/trail")
+
+print(f"{character1.name} you finally made it! This is your chance to escape.")
+print("Only you must face the gorilla king who sits atop the temple.")
+print("Oh wise soldier use your knowledge to finally escape!")
+
+fourthoption = input("A hammer and crossbow are at your disposal, which do you select? hammer/crossbow ")
+if fourthoption.lower() == "hammer" and character == "strength":
+    print("Great choice. You pick up the hamemer and toss it right at the gorilla. He is innjured and the hammer bounces right back.")
+    print("You move in again and pummel him with the hammer.")
+    print("Finally the gorilla succumbs to his injuries and you take the key across his neck.")
+elif fourthoption.lower() == "crossbow" and character == "strength":
+    print("You being placing an arrow into the crossbow but with your strength it breaks and alerts the gorilla.")
+    print("He comes running after you and tosses you aside like a banana peel.")
+    print("You crawl across the floor but he gorilla bangs you!")
+    health -= 20
+elif fourthoption.lower() == "crossbow" and character == "stealth":
+    print("You arm the crossbow and fire several shots at the gorilla.")
+    print("One of the arrows was poison and the gorilla is unsure of its surroundings.")
+    print("You move in and use a hidden sword to finish him off.")
+    print("Then you find the key around his neck ...")
+elif fourthoption.lower() == "hammer" and character == "stealth":
+    print("You pick up the hammer but it is too heavy to lift! The gorilla hears your grunts and comes after you!")
+    print("You try running but it is futile, the gorilla punches you repeatedly.")
+    print("You try escaping from his grip but it is too much even for you ...")
+    health -= 20
+else:
+    raise WrongAnswer("caves/trail")
+
+if health > 0:
+    print(f"{character1.name} you use the key and unlock the door on the temple wall.")
+    print("Woah you are back home now! You made it, you escaped!")
+    print(f"Stats: {health}")
+    print("Play again!")
+else:
+    print("Oh no the gorilla has killed you :/")
+    print("Better luck next time :)")
